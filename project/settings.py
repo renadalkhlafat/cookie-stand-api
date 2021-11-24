@@ -28,6 +28,7 @@ env = environ.Env(
     DATABASE_PASSWORD=(str, ""),
     DATABASE_HOST=(str, ""),
     DATABASE_PORT=(int, 5432),
+    DATABASE_URL=(str, ""),
 )
 
 environ.Env.read_env()
@@ -59,7 +60,7 @@ INSTALLED_APPS = [
     "corsheaders",
     # local
     "accounts",
-    "things",
+    "cookie_stands",
 ]
 
 MIDDLEWARE = [
@@ -108,6 +109,7 @@ DATABASES = {
         "PORT": env.int("DATABASE_PORT"),
     }
 }
+
 
 
 # Password validation
